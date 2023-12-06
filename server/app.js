@@ -331,13 +331,13 @@ app.set("query parser", function (str) {
 });
 
 // MIDDLEWARE GOES BELOW:
-app.use(async (req, res, next) => {
-  let exists = await client.getAsync("SESSION");;
-  if (!req.session?.user && exists != null) {
-    req.session.user = JSON.parse(exists);
-  }
-  next();
-});
+// app.use(async (req, res, next) => {
+//   // let exists = await client.getAsync("SESSION");;
+//   if (!req.session?.user) {
+//     req.session.user = JSON.parse(exists);
+//   }
+//   next();
+// });
 
 // LOGGING MIDDLEWARE
 // The fourth will apply to the entire application and will keep track
