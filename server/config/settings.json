@@ -1,0 +1,6 @@
+{
+  "mongoConfig": {
+    "serverUrl": "mongodb+srv://AshuMatai:Ashu%40123@cluster0.vyr7kuq.mongodb.net/?retryWrites=true&w=majority",
+    "database": "highlights"
+  }
+}
