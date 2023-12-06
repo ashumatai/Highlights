@@ -162,9 +162,24 @@ const checkPageNum = (num) => {
   if (num < 1) throw `The page number must be greater than or equal to 1`;
 }; 
 
-const checkDate = (date) => {};
+const checkDate = (date) => {
+  if (!date || typeof date == "undefined")
+  throw `The input ${varname} is empty`;
+if (typeof date != "string") throw `The input ${varname} is not a string`;
+date = date.trim();
+if (!date.length > 0) throw `The input ${varname} is empty`;
+if (isNaN(new Date(date))) throw `The input is not a valid date or in incorrect format`;
+};
 
-const checkEmail = (email) => {};
+const checkEmail = (email) => {
+  if (!email || typeof email == "undefined")
+  throw `The input ${varname} is empty`;
+if (typeof email != "string") throw `The input ${varname} is not a string`;
+email = email.trim();
+if (!email.length > 0) throw `The input ${varname} is empty`;
+const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
+if (!emailRegex.test(email)) throw `The input is not a valid email`;
+};
 
 // const checkCookingSkill = (cookingSkillRequired) => {
 //   if (!cookingSkillRequired || typeof cookingSkillRequired == "undefined")
